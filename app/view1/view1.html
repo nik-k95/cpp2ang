@@ -1,4 +1,4 @@
-<!--Р’РµСЂС…РЅСЏСЏ РїР°РЅРµР»СЊ-->
+<!--Верхняя панель-->
 <div class="row" style="margin-left: 5px; margin-right: 5px" id="panel1">
     <div class="col-lg-12">
     <div class="panel panel-default">
@@ -10,7 +10,7 @@
                            ng-model="current_level"
                            theme="select2"
                            ng-disabled="false"
-                           title="РЈСЂРѕРІРµРЅСЊ РѕР±СѓС‡РµРЅРёСЏ"
+                           title="Уровень обучения"
                            style="width:100%">
                     <ui-select-match>{{$select.selected.NAME}}</ui-select-match>-
                     <ui-select-choices repeat="y in data_levels">
@@ -22,12 +22,12 @@
     </div>
     </div>
 </div>
-<!--РћСЃРЅРѕРІРЅР°СЏ РїР°РЅРµР»СЊ-->
+<!--Основная панель-->
 <div class="row" style="margin-left: 5px; margin-right: 5px" id="main_panel">
     <div class="col-lg-7 col-sm-7  col-xs-7">
         <div class="panel panel-default">
             <div class="panel-body">
-                <p>РЈС‡РµР±РЅС‹Рµ РїР»Р°РЅС‹</p>
+                <p>Учебные планы</p>
                 <div id="curr_grd" ui-grid="curr_grdOptions" style="height: 450px;" ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns
                      ui-grid-pinning ui-grid-selection ui-grid-exporter ui-grid-auto-resize ng-click="curr_grdClick()"></div>
             </div>
@@ -35,13 +35,13 @@
     </div>
     <div class="col-lg-5 col-sm-5 col-xs-5" id="content_panel">
         <uib-tabset justified="true" id="my_tabs">
-            <!--РїРµСЂРІС‹Р№ С‚Р°Р±-->
-            <uib-tab heading="Р’РєР»Р°РґРєР° в„–1" id="tab1">
+            <!--первый таб-->
+            <uib-tab heading="Вкладка №1" id="tab1">
                 <div id="grid2" ui-grid="files_grdOptions" ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns
                      ui-grid-pinning ui-grid-selection ui-grid-exporter ui-grid-auto-resize></div>
             </uib-tab>
-             <!--РІС‚РѕСЂРѕР№ С‚Р°Р± -->
-            <uib-tab heading="Р’РєР»Р°РґРєР° в„–2" id="tb2">
+             <!--второй таб -->
+            <uib-tab heading="Вкладка №2" id="tb2">
                 <div class="row">
                     <div class="col-lg-12">
                         <uib-tabset justified="true" id="my_tabs2">
