@@ -1,0 +1,44 @@
+<form name="view1">
+    <panel align="top" height="100" name="panel1">
+        <lookup name="levels" data="decanatuser.ohop_on_site_pkg.get_levels" list_value="NAME" label="Уровень обучения"/>
+    </panel>
+    <panel align="client" name="main_panel">
+        <panel align="left" width="300" name="left_panel">
+        <label> caption="Учебные планы" align="top" name="label"</label>
+        <grid data="decanatuser.ohop_on_site_pkg.get_currs(0,0)"  name="curr_grd" align="client">
+            <column name="№" field="ID_CURRICULUM" maxWidth="80"/>
+            <column name="Направление" field="OKSO_STR" />
+            <column name="Профиль" field="PROFILE_DIRECTION" />
+            <column name="Факультет" field="FACULTET"  maxWidth="80" />
+            <column name="Год" field="YEAR_ENROL"  maxWidth="80" />
+        </grid>
+    </panel>
+    <panel align="client" name="content_panel">
+        <tabs name="my_tabs">
+            <tab name="tab1" label="Вкладка №1">
+                <panel name="Panel3" align="top" height="50">
+                    <button name="btn1"/>
+                    <button name="btn2"/>
+                </panel>
+                <grid data="decanatuser.ohop_on_site_pkg.get_curr_files(0)"  name="files_grd" align="client">
+                    <column name="Тип" field="NAME" minWidth="120" />
+                    <column name="Дата загрузки" field="PUBLISH_DATE" />
+                </grid>
+            </tab>
+            <tab name="tab2" label="Вкладка №2">
+                <tabs name="my_tabs2">
+                    <tab label="Default Size" name="tb21">
+                       <btn_group name="btn_group">
+                           <button caption="Action1" name="btn3"/>
+                           <button caption="Action2" name="btn4"/>
+                           <button caption="Action3" name="btn5"/>
+                       </btn_group>
+                    </tab>
+                    <tab label="Small Button" name="tb22">
+                    </tab>
+                </tabs>
+            </tab>
+        </tabs>
+    </panel>
+</panel>
+</form>
