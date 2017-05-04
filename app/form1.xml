@@ -4,7 +4,7 @@
     </panel>
     <panel align="client" name="main_panel">
         <panel align="left" width="300" name="left_panel">
-        <label caption="Учебные планы" align="top">
+        <label> caption="Учебные планы" align="top"</label>
         <grid data="decanatuser.ohop_on_site_pkg.get_currs(0,0)"  name="curr_grd" align="client">
             <column name="№" field="ID_CURRICULUM" maxWidth="80"/>
             <column name="Направление" field="OKSO_STR" />
