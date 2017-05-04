@@ -14,9 +14,19 @@
   <div align="client" id="main_panel">
    <div align="left" id="left_panel" width="300">
     <label>
-     caption="Учебные планы" align="top" name="label"
+     caption="Учебные планы" align="top"
     </label>
     <div align="client" id="curr_grd" ng-click="curr_grdClick()" style="height: 450px;" ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-pinning ui-grid-selection ui-grid-exporter ui-grid-auto-resize ui-grid="curr_grdOptions">
+     <!--значения по умолчанию параметров функции-->
+     <parameters>
+      <param default_value="0" id="v_level">
+      </param>
+      <param default_value="0" id="v_id_facultet">
+      </param>
+     </parameters>
+     <!--обработчик-->
+     <on_click detail_grid="files_grd" detail_parameter="v_id_curriculum" master_field="ID_CURRICULUM">
+     </on_click>
     </div>
    </div>
    <div align="client" id="content_panel">
@@ -29,21 +39,25 @@
        </button>
       </div>
       <div align="client" id="files_grd" ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-pinning ui-grid-selection ui-grid-exporter ui-grid-auto-resize ui-grid="files_grdOptions">
+       <parameters>
+        <param default_value="0" id="v_id_curriculum">
+        </param>
+       </parameters>
       </div>
      </uib-tab>
      <uib-tab heading="Вкладка №2" id="tab2">
-      <uib-tabset id="my_tabs2" justified="true">
+      <uib-tabset id="my_tabs" justified="true">
        <uib-tab heading="Default Size" id="tb21">
-        <div class="btn-group" id="btn_group">
-         <button caption="Action1" class="btn btn-primary" id="btn3" type="button">
+        <btn_group>
+         <button caption="Action1">
          </button>
-         <button caption="Action2" class="btn btn-primary" id="btn4" type="button">
+         <button caption="Action2">
          </button>
-         <button caption="Action3" class="btn btn-primary" id="btn5" type="button">
+         <button caption="Action3">
          </button>
-        </div>
+        </btn_group>
        </uib-tab>
-       <uib-tab heading="Small Button" id="tb22">
+       <uib-tab heading="Small Button" id="tb21">
        </uib-tab>
       </uib-tabset>
      </uib-tab>

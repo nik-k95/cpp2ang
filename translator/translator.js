@@ -31,7 +31,7 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
             noUnselect: true,
             enableFiltering: true,
             columnDefs:  [
-                ('decanatuser.ohop_on_site_pkg.get_currs(0,0)', [{'field': 'ID_CURRICULUM', 'maxwidth': '80', 'id': '№'}, {'field': 'OKSO_STR', 'id': 'Направление'}, {'field': 'PROFILE_DIRECTION', 'id': 'Профиль'}, {'field': 'FACULTET', 'maxwidth': '80', 'id': 'Факультет'}, {'field': 'YEAR_ENROL', 'maxwidth': '80', 'id': 'Год'}])
+                ('decanatuser.ohop_on_site_pkg.get_currs(v_level,v_id_facultet)', [{'field': 'ID_CURRICULUM', 'maxwidth': '80', 'id': '№'}, {'field': 'OKSO_STR', 'id': 'Направление'}, {'field': 'PROFILE_DIRECTION', 'id': 'Профиль'}, {'field': 'FACULTET', 'maxwidth': '80', 'id': 'Факультет'}, {'field': 'YEAR_ENROL', 'maxwidth': '80', 'id': 'Год'}])
                 { field: 'ID_CURRICULUM', displayName: '�', maxWidth: 80},
                 { field: 'OKSO_STR', displayName: '�����������' },
                 { field: 'PROFILE_DIRECTION' , displayName: '�������' },
