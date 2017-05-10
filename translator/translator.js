@@ -31,7 +31,44 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
             noUnselect: true,
             enableFiltering: true,
             columnDefs:  [
-                ('decanatuser.ohop_on_site_pkg.get_currs(0,0)', [{'field': 'ID_CURRICULUM', 'maxwidth': '80', 'id': '№'}, {'field': 'OKSO_STR', 'id': 'Направление'}, {'field': 'PROFILE_DIRECTION', 'id': 'Профиль'}, {'field': 'FACULTET', 'maxwidth': '80', 'id': 'Факультет'}, {'field': 'YEAR_ENROL', 'maxwidth': '80', 'id': 'Год'}])
+                
+                    { 
+                         field:'ID_CURRICULUM', 
+                    
+                         maxWidth:80, 
+                    
+                         id:'№', 
+                     } , 
+                
+                    { 
+                         field:'OKSO_STR', 
+                    
+                         id:'Направление', 
+                     } , 
+                
+                    { 
+                         field:'PROFILE_DIRECTION', 
+                    
+                         id:'Профиль', 
+                     } , 
+                
+                    { 
+                         field:'FACULTET', 
+                    
+                         maxWidth:80, 
+                    
+                         id:'Факультет', 
+                     } , 
+                
+                    { 
+                         field:'YEAR_ENROL', 
+                    
+                         maxWidth:80, 
+                    
+                         id:'Год', 
+                     } 
+                
+
                 { field: 'ID_CURRICULUM', displayName: '�', maxWidth: 80},
                 { field: 'OKSO_STR', displayName: '�����������' },
                 { field: 'PROFILE_DIRECTION' , displayName: '�������' },
@@ -58,6 +95,13 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
             noUnselect: true,
             enableFiltering: true,
             columnDefs:  [
+                
+                     { field: 'NAME' , displayName: 'Тип'  }, 
+                
+                     { field: 'PUBLISH_DATE' , displayName: 'Дата загрузки'  }
+                    
+                
+
                 { field: 'NAME', displayName: '���', minWidth: 120},
                 { field: 'PUBLISH_DATE', displayName: '���� ��������' }
             ],
