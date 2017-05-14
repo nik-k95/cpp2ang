@@ -31,25 +31,26 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
             noUnselect: true,
             enableFiltering: true,
             columnDefs:  [
+
                 
                     { 
                          field:'ID_CURRICULUM', 
                     
                          maxWidth:80, 
                     
-                         id:'№', 
+                         id:'â„–', 
                      } , 
                 
                     { 
                          field:'OKSO_STR', 
                     
-                         id:'Направление', 
+                         id:'ÐÐ°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ', 
                      } , 
                 
                     { 
                          field:'PROFILE_DIRECTION', 
                     
-                         id:'Профиль', 
+                         id:'ÐŸÑ€Ð¾Ñ„Ð¸Ð»ÑŒ', 
                      } , 
                 
                     { 
@@ -57,7 +58,7 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
                     
                          maxWidth:80, 
                     
-                         id:'Факультет', 
+                         id:'Ð¤Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚', 
                      } , 
                 
                     { 
@@ -65,15 +66,16 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
                     
                          maxWidth:80, 
                     
-                         id:'Год', 
+                         id:'Ð“Ð¾Ð´', 
                      } 
                 
 
-                { field: 'ID_CURRICULUM', displayName: '�', maxWidth: 80},
-                { field: 'OKSO_STR', displayName: '�����������' },
-                { field: 'PROFILE_DIRECTION' , displayName: '�������' },
-                { field: 'FACULTET' , displayName: '���������', maxWidth: 100 },
-                { field: 'YEAR_ENROL', displayName: '���', maxWidth: 80}
+
+                { field: 'ID_CURRICULUM', displayName: '¹', maxWidth: 80},
+                { field: 'OKSO_STR', displayName: 'Íàïðàâëåíèå' },
+                { field: 'PROFILE_DIRECTION' , displayName: 'Ïðîôèëü' },
+                { field: 'FACULTET' , displayName: 'Ôàêóëüòåò', maxWidth: 100 },
+                { field: 'YEAR_ENROL', displayName: 'Ãîä', maxWidth: 80}
             ],
         onRegisterApi: function (gridApi) {
                 $scope.curr_grdApi = gridApi;
@@ -96,14 +98,14 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
             enableFiltering: true,
             columnDefs:  [
                 
-                     { field: 'NAME' , displayName: 'Тип'  }, 
+                     { field: 'NAME' , displayName: 'Ð¢Ð¸Ð¿'  }, 
                 
-                     { field: 'PUBLISH_DATE' , displayName: 'Дата загрузки'  }
+                     { field: 'PUBLISH_DATE' , displayName: 'Ð”Ð°Ñ‚Ð° Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸'  }
                     
                 
 
-                { field: 'NAME', displayName: '���', minWidth: 120},
-                { field: 'PUBLISH_DATE', displayName: '���� ��������' }
+                { field: 'NAME', displayName: 'Òèï', minWidth: 120},
+                { field: 'PUBLISH_DATE', displayName: 'Äàòà çàãðóçêè' }
             ],
             onRegisterApi: function (gridApi) {
                 $scope.files_grdApi = gridApi;
@@ -121,7 +123,7 @@ angular.module('myApp.view1', ['ngRoute','execAPI'])
         }
 
     }]).filter('propsFilter', function () {
-    //���������� � ���������� ������
+    //ôèëüòðàöèÿ â âûïàäàþùåì ñïèñêå
     return function (items, props) {
         var out = [];
 

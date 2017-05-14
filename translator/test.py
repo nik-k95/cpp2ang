@@ -1,9 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from bs4 import BeautifulSoup                      #импорт необходимых библиотек
 import logging
 import copy
 from jinja2 import Environment, FileSystemLoader
 
-soup = BeautifulSoup(open("form1.xml"),"xml")     #дерево разбора, получаемое с использованием синт. анализатора LXML
+
+logging.basicConfig(level=logging.INFO, format='%(lineno)d %(asctime)s %(message)s')
+soup = BeautifulSoup(open("form1.xml"),"lxml")     #дерево разбора, получаемое с использованием синт. анализатора LXML
+
 new_soup = copy.deepcopy(soup)                     #его копия
 
 f = open('view2.html', 'w')                 #открытие файла для записи
@@ -142,25 +148,25 @@ dict_func = {'panel': func_panel,       #выбор функции обрабо�
 
 list=[]                                 #лист ссылок на исходный тег и соответствующий ему обработанный тег
 
-data = {'js_name':js_form}
+data = {'js_name': js_form}
 
 while tag is not None:                  #цикл прохода дерева синт. разбора
     if tag.name is not None:
         try:
-                print(tag.name,new_tag.name)
+                print(tag.name, new_tag.name)
                 add_id(new_tag)
-                add, count=dict_func[new_tag.name](new_tag)      #вызов функций для обработки тега
+                add, count = dict_func[new_tag.name](new_tag)      #вызов функций для обработки тега
                 print(count)
                 if add is True:                                 #значит добавились новые теги
                     while count is not 0:                       #цикл для случаев, когда при обработке тега добавлялись новые.
-                        print(count,new_tag.name)               #чтобы восстановить соответствие между исходным тегом и обработанным
+                        print(count, new_tag.name)               #чтобы восстановить соответствие между исходным тегом и обработанным
                         if new_tag.name is not None:count=count-1
                         new_tag = new_tag.next
         except KeyError:
                 logging.error('Error with tag named %s', new_tag.name)      #сообщение об ошибке, связанной с текущим тегом
     list.append({'src': tag, 'dest': new_tag})                       #добавление ссылок в лист
-    tag=tag.next                                                     #переход на следующий тег
-    new_tag=new_tag.next
+    tag = tag.next                                                     #переход на следующий тег
+    new_tag = new_tag.next
 
 print(data)
 
@@ -168,10 +174,11 @@ del_list=new_soup.find_all('column')                                #удале�
 for tag in del_list:
     tag.decompose()
 
+
 f.write(str(new_soup.prettify().replace('<?xml version="1.0" encoding="utf-8"?>','')))  #запись обработанного дерева в файл
 
 
-env = Environment(loader=FileSystemLoader('E:/translator'))         #загрузка шаблона
+env = Environment(loader=FileSystemLoader('.'))         #загрузка шаблона
 template = env.get_template('js_template.js')
 
 with open("translator.js", "w") as f:                               #создание выходного js файла
